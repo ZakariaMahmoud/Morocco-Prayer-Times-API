@@ -32,7 +32,8 @@ app.get('/api/:city/today', (req, res) => {
 
 app.get('/api/cities', (req, res) => {
     const data = require('./cities')
-    res.json(data[cities])
+
+    res.json(data)
 })
 
 
