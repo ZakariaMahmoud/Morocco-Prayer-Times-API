@@ -1,0 +1,463 @@
+{
+    "1" : {
+        "nameFR" : "Figuig",
+        "nameAR":"فكيك"
+    },
+    "2": {
+        "nameFR": "Oujda",
+        "nameAR": "وجدة"
+    },
+    "3": {
+        "nameFR": "Bouarfa",
+        "nameAR": "بوعرفة"
+    },
+    "4": {
+        "nameFR": "Jerada",
+        "nameAR": "جرادة"
+    },
+    "5": {
+        "nameFR": "Berkane",
+        "nameAR": "بركان"
+    },
+    "6": {
+        "nameFR": "Aïn Chaïr",
+        "nameAR": "عين الشعير"
+    },
+    "7": {
+        "nameFR": "Taourirt",
+        "nameAR": "تاوريرت"
+    },
+    "8": {
+        "nameFR": "Nador",
+        "nameAR": "الناظور"
+    },
+    "9": {
+        "nameFR": "Melilla",
+        "nameAR": "مليلية"
+    },
+    "10": {
+        "nameFR": "Bouanane",
+        "nameAR": "بوعنان"
+    },
+    "11": {
+        "nameFR": "Guercif",
+        "nameAR": "كرسيف"
+    },
+    "12": {
+        "nameFR": "Boutagit",
+        "nameAR": "بوتاجيت"
+    },
+    "13": {
+        "nameFR": "Tandit",
+        "nameAR": "تانديت"
+    },
+    "14": {
+        "nameFR": "Aknol",
+        "nameAR": "أكنول"
+    },
+    "15": {
+        "nameFR": "Al Hoceima",
+        "nameAR": "الحسيمة"
+    },
+    "16": {
+        "nameFR": "Missour",
+        "nameAR": "ميسور"
+    },
+    "17": {
+        "nameFR": "Taza",
+        "nameAR": "تازة"
+    },
+    "18": {
+        "nameFR": "Bourd",
+        "nameAR": "بورد"
+    },
+    "19": {
+        "nameFR": "Erfoud",
+        "nameAR": "أرفود"
+    },
+    "20": {
+        "nameFR": "Rissani",
+        "nameAR": "الريصاني"
+    },
+    "21": {
+        "nameFR": "Oued Amlil",
+        "nameAR": "واد إمليل"
+    },
+    "22": {
+        "nameFR": "Tahla",
+        "nameAR": "تاهلة"
+    },
+    "23": {
+        "nameFR": "Erachidia",
+        "nameAR": "الراشيدية"
+    },
+    "24": {
+        "nameFR": "Er-Rich",
+        "nameAR": "الريش"
+    },
+    "25": {
+        "nameFR": "El Menzel Beni Yazgha",
+        "nameAR": "المنزل بني يازغة"
+    },
+    "26": {
+        "nameFR": "Taounate",
+        "nameAR": "تاونات"
+    },
+    "27": {
+        "nameFR": "Tissa",
+        "nameAR": "تيسة"
+    },
+    "28": {
+        "nameFR": "Boulemane",
+        "nameAR": "بولمان"
+    },
+    "29": {
+        "nameFR": "Midelt",
+        "nameAR": "ميدلت"
+    },
+    "30": {
+        "nameFR": "Sefrou",
+        "nameAR": "صفرو"
+    },
+    "31": {
+        "nameFR": "Goulmima",
+        "nameAR": "كلميمة"
+    },
+    "32": {
+        "nameFR": "Fes",
+        "nameAR": "فاس"
+    },
+    "33": {
+        "nameFR": "Imouzzer kandar",
+        "nameAR": "إموزار كندر"
+    },
+    "34": {
+        "nameFR": "Tinejdad",
+        "nameAR": "تنجداد"
+    },
+    "35": {
+        "nameFR": "Ifrane",
+        "nameAR": "إفران"
+    },
+    "36": {
+        "nameFR": "Moulay Yacoub",
+        "nameAR": "مولاي يعقوب"
+    },
+    "37": {
+        "nameFR": "Azrou",
+        "nameAR": "أزرو"
+    },
+    "38": {
+        "nameFR": "Chefchaouen",
+        "nameAR": "شفشاون"
+    },
+    "39": {
+        "nameFR": "Sebta",
+        "nameAR": "سبتة"
+    },
+    "40": {
+        "nameFR": "Tetouan",
+        "nameAR": "تطوان"
+    },
+    "41": {
+        "nameFR": "El Hajeb",
+        "nameAR": "الحاجب"
+    },
+    "42": {
+        "nameFR": "Moulay Driss Zerhoun",
+        "nameAR": "مولاي دريس زرهون"
+    },
+    "43": {
+        "nameFR": "Meknes",
+        "nameAR": "مكناس"
+    },
+    "44": {
+        "nameFR": "Ouezzane",
+        "nameAR": "وزان"
+    },
+    "45": {
+        "nameFR": "Khenifra",
+        "nameAR": "خنيفرة"
+    },
+    "46": {
+        "nameFR": "Sidi Kacem",
+        "nameAR": "سيدي قاسم"
+    },
+    "47": {
+        "nameFR": "Tizi Ouasli",
+        "nameAR": "تيزي وسلي"
+    },
+    "48": {
+        "nameFR": "Tanger",
+        "nameAR": "طنجة"
+    },
+    "49": {
+        "nameFR": "Zagora",
+        "nameAR": "زاكورة"
+    },
+    "50": {
+        "nameFR": "Ksar El Kebir",
+        "nameAR": "القصر الكبير"
+    },
+    "51": {
+        "nameFR": "Arbaoua",
+        "nameAR": "عرباوة"
+    },
+    "52": {
+        "nameFR": "Sidi Slimane",
+        "nameAR": "سيدي سليمان"
+    },
+    "53": {
+        "nameFR": "Souk El Arbaa Gharb",
+        "nameAR": "سوق أربعاء الغرب"
+    },
+    "54": {
+        "nameFR": "Assilah",
+        "nameAR": "أصيلا "
+    },
+    "55": {
+        "nameFR": "Khemisset",
+        "nameAR": "الخميسات"
+    },
+    "56": {
+        "nameFR": "Kelaat Magouna",
+        "nameAR": "قلعة مكونة"
+    },
+    "57": {
+        "nameFR": "Larache",
+        "nameAR": "العرائش"
+    },
+    "58": {
+        "nameFR": "Moulay Bouazza",
+        "nameAR": "مولاي بوعزة"
+    },
+    "59": {
+        "nameFR": "Kasba Tadla",
+        "nameAR": "قصبة تادلة"
+    },
+    "60": {
+        "nameFR": "Sidi Yahya El Gharb",
+        "nameAR": "سيدي يحيى الغرب"
+    },
+    "61": {
+        "nameFR": "Tifelt",
+        "nameAR": "تيفلت"
+    },
+    "62": {
+        "nameFR": "Beni Mellal",
+        "nameAR": "بني ملال"
+    },
+    "63": {
+        "nameFR": "Meskoura",
+        "nameAR": "مسكورة"
+    },
+    "64": {
+        "nameFR": "Oued Zem",
+        "nameAR": "واد زم"
+    },
+    "65": {
+        "nameFR": "Azilal",
+        "nameAR": "أزيلال"
+    },
+    "66": {
+        "nameFR": "Fquih Ben Salah",
+        "nameAR": "فقيه بن صالح"
+    },
+    "67": {
+        "nameFR": "Kenitra",
+        "nameAR": "قنيطرة"
+    },
+    "68": {
+        "nameFR": "Rommani",
+        "nameAR": "الرماني"
+    }, 
+    "69": {
+            "nameFR": "Rabat-Salé",
+            "nameAR": "الرباط سلا"
+        },
+    "70": {
+        "nameFR": "Khouribga",
+        "nameAR": "خريبكة"
+    },
+ 
+    "71": {
+        "nameFR": "Ouarzazate",
+        "nameAR": "ورزازات"
+    },
+    "72": {
+        "nameFR": "Demnate",
+        "nameAR": "دمنات"
+    },
+    "73": {
+        "nameFR": "Benslimane",
+        "nameAR": "بن سليمان"
+    },
+    "74": {
+        "nameFR": "Bouznika",
+        "nameAR": "بوزنيقة"
+    },
+    "75": {
+        "nameFR": "El Gara",
+        "nameAR": "الكارة"
+    },
+    "76": {
+        "nameFR": "Mohammedia",
+        "nameAR": "المحمدية"
+    },
+    "77": {
+        "nameFR": "Kelaat Sraghna",
+        "nameAR": "قلعة السراغنة"
+    },
+    "78": {
+        "nameFR": "Berrchid",
+        "nameAR": "برشيد"
+    },
+    "79": {
+        "nameFR": "Settat",
+        "nameAR": "سطات"
+    },
+    "80": {
+        "nameFR": "Casablanca",
+        "nameAR": "الدار البيضاء"
+    },
+    "81": {
+        "nameFR": "Taliouine",
+        "nameAR": "تاليوين"
+    },
+    "82": {
+        "nameFR": "Benguerir",
+        "nameAR": "بنكرير"
+    },
+    "83": {
+        "nameFR": "Tata",
+        "nameAR": "طاطا"
+    },
+    "84": {
+        "nameFR": "Marrakech",
+        "nameAR": "مراكش"
+    },
+    "85": {
+        "nameFR": "Akka",
+        "nameAR": "أقا"
+    },
+    "86": {
+        "nameFR": "Azemmour",
+        "nameAR": "أزمور"
+    },
+    "87": {
+        "nameFR": "Aghram",
+        "nameAR": "أغرام"
+    },
+    "88": {
+        "nameFR": "El Jadida",
+        "nameAR": "الجديدة"
+    },
+    "89": {
+        "nameFR": "Youssoufia",
+        "nameAR": "اليوسفية"
+    },
+    "90": {
+        "nameFR": "Taroudant",
+        "nameAR": "تارودانت"
+    },
+    "91": {
+        "nameFR": "Tafraout",
+        "nameAR": "تافراوت"
+    },
+    "92": {
+        "nameFR": "Safi",
+        "nameAR": "أسفي"
+    },
+    "93": {
+        "nameFR": "Zag",
+        "nameAR": "الزاك"
+    },
+    "94": {
+        "nameFR": "Assa",
+        "nameAR": "أسا"
+    },
+    "95": {
+        "nameFR": "Agadir",
+        "nameAR": "أكادير"
+    },
+    "96": {
+        "nameFR": "Tiznit",
+        "nameAR": "تيزنيت"
+    },
+    "97": {
+        "nameFR": "Essaouira",
+        "nameAR": "الصويرة"
+    },
+    "98": {
+        "nameFR": "Guelmim",
+        "nameAR": "كلميم"
+    },
+    "99": {
+        "nameFR": "Sidi Ifni",
+        "nameAR": "سيدي إفني"
+    },
+    "100": {
+        "nameFR": "Tan-Tan",
+        "nameAR": "طانطان"
+    },
+    "101": {
+        "nameFR": "Smara",
+        "nameAR": "سمارة"
+    },
+    "102": {
+        "nameFR": "Tarfaya",
+        "nameAR": "طرفاية"
+    },
+    "103": {
+        "nameFR": "Laayoun",
+        "nameAR": "العيون"
+    },
+    "104": {
+        "nameFR": "Boujdour",
+        "nameAR": "بوجدور"
+    },
+    "105": {
+        "nameFR": "Dakhla",
+        "nameAR": "الداخلة"
+    },
+    "106": {
+        "nameFR": "Lagouira",
+        "nameAR": "الكويرة"
+    },
+    "107": {
+        "nameFR": "Alnif",
+        "nameAR": "النيف"
+    },
+    "108": {
+        "nameFR": "Bejaad",
+        "nameAR": "أبي جعد"
+    },
+    "109": {
+        "nameFR": "Aousserd",
+        "nameAR": "أوسرد"
+    },
+    "110": {
+        "nameFR": "Tinghir",
+        "nameAR": "تنغير"
+    },
+    "111": {
+        "nameFR": "Chtouka Ait Baha",
+        "nameAR": "أشتوكة أيت باها"
+    },
+    "112": {
+        "nameFR": "Fnideq",
+        "nameAR": "الفنيدق"
+    },
+    "113": {
+        "nameFR": "Skhour Rehamna",
+        "nameAR": "صخور الرحامنة"
+    },
+    "114": {
+        "nameFR": "Sidi Ifni",
+        "nameAR": "سيدي إفني"
+    },
+    "115": {
+        "nameFR": "Ouezzane",
+        "nameAR": "وزان"
+    }
+}
