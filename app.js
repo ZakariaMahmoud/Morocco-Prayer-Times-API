@@ -1,17 +1,13 @@
 const express = require('express')
 const app = express()
 
-app.get('/', (req, res) => {
-    res.send('')
-})
-
 app.get('/api/:city/:year/:month/:day?', (req, res) => {
-    
+
     var city = (req.params.city >= 1 && req.params.city <= 115) ? req.params.city : 0;
     var month = (req.params.month >= 1 && req.params.month <= 12) ? removeZero(req.params.month) : 0;
     var day = (req.params.day && req.params.day >= 1 && req.params.day <= 31) ? removeZero(req.params.day) : 0;
     if (city && month) {
-        
+
         const data = require(`./${req.params.year}/${city}/${month}`)
 
         if (day) { res.json(data[`${day}`]) } else res.json(data)
@@ -20,20 +16,35 @@ app.get('/api/:city/:year/:month/:day?', (req, res) => {
     }
 })
 
-app.get('/api/', (req, res) => {
+app.get('/api/:city/today', (req, res) => {
 
-    cities = req.query.cities
-    if (cities) {
-        const data = require('./cities')
+    var city = (req.params.city >= 1 && req.params.city <= 115) ? req.params.city : 0;
+    var d = new Date();
 
-        res.json(data[cities])
-    } else {
-        const data = require('./cities')
 
-         res.json(data) 
-    }
-    
+    var path = `./${d.getFullYear()}/${city}/${(d.getMonth() + 1)}`
+
+    const data = require(path)
+
+    res.json(data[d.getDate()])
+
 })
+
+app.get('/api/cities', (req, res) => {
+    const data = require('./cities')
+    res.json(data[cities])
+})
+
+
+app.get('/api/', (req, res) => {
+    res.redirect('https://github.com/ZakariaMahmoud/Morocco-Prayer-Times-API')
+})
+
+app.get('*', (req, res) => {
+    res.send("")
+})
+
+
 
 app.listen(3000, () => console.log("Listenin on port 3000..."))
 
