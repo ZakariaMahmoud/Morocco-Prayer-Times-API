@@ -20,6 +20,21 @@ app.get('/api/:city/:year/:month/:day?', (req, res) => {
     }
 })
 
+app.get('/api/', (req, res) => {
+
+    cities = req.query.cities
+    if (cities) {
+        const data = require('./cities')
+
+        res.json(data[cities])
+    } else {
+        const data = require('./cities')
+
+         res.json(data) 
+    }
+    
+})
+
 app.listen(3000, () => console.log("Listenin on port 3000..."))
 
 /* Functions */

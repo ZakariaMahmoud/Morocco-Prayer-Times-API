@@ -1,7 +1,7 @@
 {
-    "1" : {
-        "nameFR" : "Figuig",
-        "nameAR":"فكيك"
+    "1": {
+        "nameFR": "Figuig",
+        "nameAR": "فكيك"
     },
     "2": {
         "nameFR": "Oujda",
@@ -270,16 +270,15 @@
     "68": {
         "nameFR": "Rommani",
         "nameAR": "الرماني"
-    }, 
+    },
     "69": {
-            "nameFR": "Rabat-Salé",
-            "nameAR": "الرباط سلا"
-        },
+        "nameFR": "Rabat-Salé",
+        "nameAR": "الرباط سلا"
+    },
     "70": {
         "nameFR": "Khouribga",
         "nameAR": "خريبكة"
     },
- 
     "71": {
         "nameFR": "Ouarzazate",
         "nameAR": "ورزازات"
