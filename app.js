@@ -30,10 +30,15 @@ app.get('/api/:city/today', (req, res) => {
 
 })
 
-app.get('/api/cities', (req, res) => {
+app.get('/api/cities/:id?', (req, res) => {
     const data = require('./cities')
-
-    res.json(data)
+    id = (req.params.id >= 1 && req.params.id <= 115) ? req.params.id : 0;
+    if (id) {
+        res.json(data[id.toString()])
+    } else {
+        res.json(data)
+    }
+    
 })
 
 
