@@ -135,7 +135,13 @@ node app.js
 
 ### For get today's prayer times for  Rabat 
  :information_source: **ID number of Rabat city is 69**
+ :information_source: **Default Timezone = Africa/Casablanca**
 - Go to https://www.prayertimes.mahmoud.ma/api/69/today
+
+**Or with other timezones ([list of timezones](https://github.com/dmfilipenko/timezones.json/blob/master/timezones.json))**
+
+- http://localhost:3000/api/69/today?timezone=Pacific/Auckland
+
 
 return : 
 ```json=
@@ -150,6 +156,7 @@ return :
 ```
 ### For get prayer times of Rabat for the month 3 of the year 2021
 :information_source: **ID number of Rabat city is 69**
+
 - Go to https://www.prayertimes.mahmoud.ma/api/69/2021/3
 
 return
