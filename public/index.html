@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Morocco Prayer Times -API - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @charset "UTF-8";@import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important;position:relative}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{text-align:center;background-color:inherit;border-radius:0;white-space:inherit;overflow:visible}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}#MathJax_Message{z-index:1000!important}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc.both-mode{margin-left:8px}.ui-toc.both-mode .ui-toc-label{height:40px;padding:10px 4px;border-top-left-radius:0;border-bottom-left-radius:0}.ui-toc-label{background-color:#e6e6e6;border:none;color:#868686;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:20px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:50%;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-more-info{color:#888;cursor:pointer;vertical-align:middle}.ui-more-info .fa{font-size:16px}.ui-connectedGithub,.ui-published-note{color:#888}.ui-connectedGithub{line-height:23px;white-space:nowrap}.ui-connectedGithub a.file-path{color:#888;text-decoration:none;padding-left:22px}.ui-connectedGithub a.file-path:active,.ui-connectedGithub a.file-path:hover{color:#888;text-decoration:underline}.ui-connectedGithub .fa{font-size:20px}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}.selectable{-webkit-user-select:text;-o-user-select:text;user-select:text}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}.site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .site-ui-font{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;letter-spacing:.025em;font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-inner" data-hard-breaks="true" style=""><h1 id="Morocco-Prayer-Times--API" data-id="Morocco-Prayer-Times--API" style=""><a class="anchor hidden-xs" href="#Morocco-Prayer-Times--API" title="Morocco-Prayer-Times--API"><span class="octicon octicon-link"></span></a>Morocco Prayer Times -API</h1><p>🇲🇦 <strong>Morocco Prayer Times API ( From the Ministry of Endowments and Islamic Affairs in Morocco <a href="http://habous.gov.ma" target="_blank" rel="noopener">habous.gov.ma</a>)</strong> 🇲🇦</p><h2 id="Install" data-id="Install" style=""><a class="anchor hidden-xs" href="#Install" title="Install"><span class="octicon octicon-link"></span></a>Install</h2><pre><code class="bash hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span></div><div class="code">npm install
+
+node app.js
+</div></div></code></pre><h2 id="How-to-use-" data-id="How-to-use-" style=""><a class="anchor hidden-xs" href="#How-to-use-" title="How-to-use-"><span class="octicon octicon-link"></span></a>How to use ?</h2><ul>
+<li><strong>Every city has an ID number</strong></li>
+</ul><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>الإسم</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Figuig</td>
+<td>فكيك</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Oujda</td>
+<td>وجدة</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bouarfa</td>
+<td>بوعرفة</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Jerada</td>
+<td>جرادة</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Berkane</td>
+<td>بركان</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Aïn Chaïr</td>
+<td>عين الشعير</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Taourirt</td>
+<td>تاوريرت</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Nador</td>
+<td>الناظور</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Melilla</td>
+<td>مليلية</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Bouanane</td>
+<td>بوعنان</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Guercif</td>
+<td>كرسيف</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Boutagit</td>
+<td>بوتاجيت</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Tandit</td>
+<td>تانديت</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Aknol</td>
+<td>أكنول</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Al Hoceima</td>
+<td>الحسيمة</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Missour</td>
+<td>ميسور</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Taza</td>
+<td>تازة</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Bourd</td>
+<td>بورد</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Erfoud</td>
+<td>أرفود</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Rissani</td>
+<td>الريصاني</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Oued Amlil</td>
+<td>واد إمليل</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Tahla</td>
+<td>تاهلة</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Erachidia</td>
+<td>الراشيدية</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Er-Rich</td>
+<td>الريش</td>
+</tr>
+<tr>
+<td>25</td>
+<td>El Menzel Beni Yazgha</td>
+<td>المنزل بني يازغة</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Taounate</td>
+<td>تاونات</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Tissa</td>
+<td>تيسة</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Boulemane</td>
+<td>بولمان</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Midelt</td>
+<td>ميدلت</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Sefrou</td>
+<td>صفرو</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Goulmima</td>
+<td>كلميمة</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Fes</td>
+<td>فاس</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Imouzzer kandar</td>
+<td>إموزار كندر</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Tinejdad</td>
+<td>تنجداد</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Ifrane</td>
+<td>إفران</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Moulay Yacoub</td>
+<td>مولاي يعقوب</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Azrou</td>
+<td>أزرو</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Chefchaouen</td>
+<td>شفشاون</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Sebta</td>
+<td>سبتة</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Tetouan</td>
+<td>تطوان</td>
+</tr>
+<tr>
+<td>41</td>
+<td>El Hajeb</td>
+<td>الحاجب</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Moulay Driss Zerhoun</td>
+<td>مولاي دريس زرهون</td>
+</tr>
+<tr>
+<td>43</td>
+<td>Meknes</td>
+<td>مكناس</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Ouezzane</td>
+<td>وزان</td>
+</tr>
+<tr>
+<td>45</td>
+<td>Khenifra</td>
+<td>خنيفرة</td>
+</tr>
+<tr>
+<td>46</td>
+<td>Sidi Kacem</td>
+<td>سيدي قاسم</td>
+</tr>
+<tr>
+<td>47</td>
+<td>Tizi Ouasli</td>
+<td>تيزي وسلي</td>
+</tr>
+<tr>
+<td>48</td>
+<td>Tanger</td>
+<td>طنجة</td>
+</tr>
+<tr>
+<td>49</td>
+<td>Zagora</td>
+<td>زاكورة</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Ksar El Kebir</td>
+<td>القصر الكبير</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Arbaoua</td>
+<td>عرباوة</td>
+</tr>
+<tr>
+<td>52</td>
+<td>Sidi Slimane</td>
+<td>سيدي سليمان</td>
+</tr>
+<tr>
+<td>53</td>
+<td>Souk El Arbaa Gharb</td>
+<td>سوق أربعاء الغرب</td>
+</tr>
+<tr>
+<td>54</td>
+<td>Assilah</td>
+<td>أصيلا</td>
+</tr>
+<tr>
+<td>55</td>
+<td>Khemisset</td>
+<td>الخميسات</td>
+</tr>
+<tr>
+<td>56</td>
+<td>Kelaat Magouna</td>
+<td>قلعة مكونة</td>
+</tr>
+<tr>
+<td>57</td>
+<td>Larache</td>
+<td>العرائش</td>
+</tr>
+<tr>
+<td>58</td>
+<td>Moulay Bouazza</td>
+<td>مولاي بوعزة</td>
+</tr>
+<tr>
+<td>59</td>
+<td>Kasba Tadla</td>
+<td>قصبة تادلة</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Sidi Yahya El Gharb</td>
+<td>سيدي يحيى الغرب</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Tifelt</td>
+<td>تيفلت</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Beni Mellal</td>
+<td>بني ملال</td>
+</tr>
+<tr>
+<td>63</td>
+<td>Meskoura</td>
+<td>مسكورة</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Oued Zem</td>
+<td>واد زم</td>
+</tr>
+<tr>
+<td>65</td>
+<td>Azilal</td>
+<td>أزيلال</td>
+</tr>
+<tr>
+<td>66</td>
+<td>Fquih Ben Salah</td>
+<td>فقيه بن صالح</td>
+</tr>
+<tr>
+<td>67</td>
+<td>Kenitra</td>
+<td>قنيطرة</td>
+</tr>
+<tr>
+<td>68</td>
+<td>Rommani</td>
+<td>الرماني</td>
+</tr>
+<tr>
+<td>69</td>
+<td>Rabat-Salé</td>
+<td>الرباط سلا</td>
+</tr>
+<tr>
+<td>70</td>
+<td>Khouribga</td>
+<td>خريبكة</td>
+</tr>
+<tr>
+<td>71</td>
+<td>Ouarzazate</td>
+<td>ورزازات</td>
+</tr>
+<tr>
+<td>72</td>
+<td>Demnate</td>
+<td>دمنات</td>
+</tr>
+<tr>
+<td>73</td>
+<td>Benslimane</td>
+<td>بن سليمان</td>
+</tr>
+<tr>
+<td>74</td>
+<td>Bouznika</td>
+<td>بوزنيقة</td>
+</tr>
+<tr>
+<td>75</td>
+<td>El Gara</td>
+<td>الكارة</td>
+</tr>
+<tr>
+<td>76</td>
+<td>Mohammedia</td>
+<td>المحمدية</td>
+</tr>
+<tr>
+<td>77</td>
+<td>Kelaat Sraghna</td>
+<td>قلعة السراغنة</td>
+</tr>
+<tr>
+<td>78</td>
+<td>Berrchid</td>
+<td>برشيد</td>
+</tr>
+<tr>
+<td>79</td>
+<td>Settat</td>
+<td>سطات</td>
+</tr>
+<tr>
+<td>80</td>
+<td>Casablanca</td>
+<td>الدار البيضاء</td>
+</tr>
+<tr>
+<td>81</td>
+<td>Taliouine</td>
+<td>تاليوين</td>
+</tr>
+<tr>
+<td>82</td>
+<td>Benguerir</td>
+<td>بنكرير</td>
+</tr>
+<tr>
+<td>83</td>
+<td>Tata</td>
+<td>طاطا</td>
+</tr>
+<tr>
+<td>84</td>
+<td>Marrakech</td>
+<td>مراكش</td>
+</tr>
+<tr>
+<td>85</td>
+<td>Akka</td>
+<td>أقا</td>
+</tr>
+<tr>
+<td>86</td>
+<td>Azemmour</td>
+<td>أزمور</td>
+</tr>
+<tr>
+<td>87</td>
+<td>Aghram</td>
+<td>أغرام</td>
+</tr>
+<tr>
+<td>88</td>
+<td>El Jadida</td>
+<td>الجديدة</td>
+</tr>
+<tr>
+<td>89</td>
+<td>Youssoufia</td>
+<td>اليوسفية</td>
+</tr>
+<tr>
+<td>90</td>
+<td>Taroudant</td>
+<td>تارودانت</td>
+</tr>
+<tr>
+<td>91</td>
+<td>Tafraout</td>
+<td>تافراوت</td>
+</tr>
+<tr>
+<td>92</td>
+<td>Safi</td>
+<td>أسفي</td>
+</tr>
+<tr>
+<td>93</td>
+<td>Zag</td>
+<td>الزاك</td>
+</tr>
+<tr>
+<td>94</td>
+<td>Assa</td>
+<td>أسا</td>
+</tr>
+<tr>
+<td>95</td>
+<td>Agadir</td>
+<td>أكادير</td>
+</tr>
+<tr>
+<td>96</td>
+<td>Tiznit</td>
+<td>تيزنيت</td>
+</tr>
+<tr>
+<td>97</td>
+<td>Essaouira</td>
+<td>الصويرة</td>
+</tr>
+<tr>
+<td>98</td>
+<td>Guelmim</td>
+<td>كلميم</td>
+</tr>
+<tr>
+<td>99</td>
+<td>Sidi Ifni</td>
+<td>سيدي إفني</td>
+</tr>
+<tr>
+<td>100</td>
+<td>Tan-Tan</td>
+<td>طانطان</td>
+</tr>
+<tr>
+<td>101</td>
+<td>Smara</td>
+<td>سمارة</td>
+</tr>
+<tr>
+<td>102</td>
+<td>Tarfaya</td>
+<td>طرفاية</td>
+</tr>
+<tr>
+<td>103</td>
+<td>Laayoun</td>
+<td>العيون</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Boujdour</td>
+<td>بوجدور</td>
+</tr>
+<tr>
+<td>105</td>
+<td>Dakhla</td>
+<td>الداخلة</td>
+</tr>
+<tr>
+<td>106</td>
+<td>Lagouira</td>
+<td>الكويرة</td>
+</tr>
+<tr>
+<td>107</td>
+<td>Alnif</td>
+<td>النيف</td>
+</tr>
+<tr>
+<td>108</td>
+<td>Bejaad</td>
+<td>أبي جعد</td>
+</tr>
+<tr>
+<td>109</td>
+<td>Aousserd</td>
+<td>أوسرد</td>
+</tr>
+<tr>
+<td>110</td>
+<td>Tinghir</td>
+<td>تنغير</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Chtouka Ait Baha</td>
+<td>أشتوكة أيت باها</td>
+</tr>
+<tr>
+<td>112</td>
+<td>Fnideq</td>
+<td>الفنيدق</td>
+</tr>
+<tr>
+<td>113</td>
+<td>Skhour Rehamna</td>
+<td>صخور الرحامنة</td>
+</tr>
+<tr>
+<td>114</td>
+<td>Sidi Ifni</td>
+<td>سيدي إفني</td>
+</tr>
+<tr>
+<td>115</td>
+<td>Ouezzane</td>
+<td>وزان</td>
+</tr>
+</tbody>
+</table><h3 id="For-get-today’s-prayer-times-for-Rabat" data-id="For-get-today’s-prayer-times-for-Rabat" style=""><a class="anchor hidden-xs" href="#For-get-today’s-prayer-times-for-Rabat" title="For-get-today’s-prayer-times-for-Rabat"><span class="octicon octicon-link"></span></a>For get today’s prayer times for  Rabat</h3><p><img class="emoji" alt=":information_source:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/information_source.png"> <strong>ID number of Rabat city is 69</strong></p><ul>
+<li>Go to <a href="https://www.prayertimes.mahmoud.ma/api/69/today" target="_blank" rel="noopener">https://www.prayertimes.mahmoud.ma/api/69/today</a></li>
+</ul><p>return :</p><pre><code class="json hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span></div><div class="code"><span class="token punctuation">{</span>
+   <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:50"</span><span class="token punctuation">,</span>
+   <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:17"</span><span class="token punctuation">,</span>
+   <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:37"</span><span class="token punctuation">,</span>
+   <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:04"</span><span class="token punctuation">,</span>
+   <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:49"</span><span class="token punctuation">,</span>
+   <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:05"</span>
+<span class="token punctuation">}</span>
+</div></div></code></pre><h3 id="For-get-prayer-times-of-Rabat-for-the-month-3-of-the-year-2021" data-id="For-get-prayer-times-of-Rabat-for-the-month-3-of-the-year-2021" style=""><a class="anchor hidden-xs" href="#For-get-prayer-times-of-Rabat-for-the-month-3-of-the-year-2021" title="For-get-prayer-times-of-Rabat-for-the-month-3-of-the-year-2021"><span class="octicon octicon-link"></span></a>For get prayer times of Rabat for the month 3 of the year 2021</h3><p><img class="emoji" alt=":information_source:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/information_source.png"> <strong>ID number of Rabat city is 69</strong></p><ul>
+<li>Go to <a href="https://www.prayertimes.mahmoud.ma/api/69/2021/3" target="_blank" rel="noopener">https://www.prayertimes.mahmoud.ma/api/69/2021/3</a></li>
+</ul><p>return</p><pre><code class="json hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span>
+<span data-linenumber="36"></span>
+<span data-linenumber="37"></span>
+<span data-linenumber="38"></span>
+<span data-linenumber="39"></span>
+<span data-linenumber="40"></span>
+<span data-linenumber="41"></span>
+<span data-linenumber="42"></span>
+<span data-linenumber="43"></span>
+<span data-linenumber="44"></span>
+<span data-linenumber="45"></span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span>
+<span data-linenumber="50"></span>
+<span data-linenumber="51"></span>
+<span data-linenumber="52"></span>
+<span data-linenumber="53"></span>
+<span data-linenumber="54"></span>
+<span data-linenumber="55"></span>
+<span data-linenumber="56"></span>
+<span data-linenumber="57"></span>
+<span data-linenumber="58"></span>
+<span data-linenumber="59"></span>
+<span data-linenumber="60"></span>
+<span data-linenumber="61"></span>
+<span data-linenumber="62"></span>
+<span data-linenumber="63"></span>
+<span data-linenumber="64"></span>
+<span data-linenumber="65"></span>
+<span data-linenumber="66"></span>
+<span data-linenumber="67"></span>
+<span data-linenumber="68"></span>
+<span data-linenumber="69"></span>
+<span data-linenumber="70"></span>
+<span data-linenumber="71"></span>
+<span data-linenumber="72"></span>
+<span data-linenumber="73"></span>
+<span data-linenumber="74"></span>
+<span data-linenumber="75"></span>
+<span data-linenumber="76"></span>
+<span data-linenumber="77"></span>
+<span data-linenumber="78"></span>
+<span data-linenumber="79"></span>
+<span data-linenumber="80"></span>
+<span data-linenumber="81"></span>
+<span data-linenumber="82"></span>
+<span data-linenumber="83"></span>
+<span data-linenumber="84"></span>
+<span data-linenumber="85"></span>
+<span data-linenumber="86"></span>
+<span data-linenumber="87"></span>
+<span data-linenumber="88"></span>
+<span data-linenumber="89"></span>
+<span data-linenumber="90"></span>
+<span data-linenumber="91"></span>
+<span data-linenumber="92"></span>
+<span data-linenumber="93"></span>
+<span data-linenumber="94"></span>
+<span data-linenumber="95"></span>
+<span data-linenumber="96"></span>
+<span data-linenumber="97"></span>
+<span data-linenumber="98"></span>
+<span data-linenumber="99"></span>
+<span data-linenumber="100"></span>
+<span data-linenumber="101"></span>
+<span data-linenumber="102"></span>
+<span data-linenumber="103"></span>
+<span data-linenumber="104"></span>
+<span data-linenumber="105"></span>
+<span data-linenumber="106"></span>
+<span data-linenumber="107"></span>
+<span data-linenumber="108"></span>
+<span data-linenumber="109"></span>
+<span data-linenumber="110"></span>
+<span data-linenumber="111"></span>
+<span data-linenumber="112"></span>
+<span data-linenumber="113"></span>
+<span data-linenumber="114"></span>
+<span data-linenumber="115"></span>
+<span data-linenumber="116"></span>
+<span data-linenumber="117"></span>
+<span data-linenumber="118"></span>
+<span data-linenumber="119"></span>
+<span data-linenumber="120"></span>
+<span data-linenumber="121"></span>
+<span data-linenumber="122"></span>
+<span data-linenumber="123"></span>
+<span data-linenumber="124"></span>
+<span data-linenumber="125"></span>
+<span data-linenumber="126"></span>
+<span data-linenumber="127"></span>
+<span data-linenumber="128"></span>
+<span data-linenumber="129"></span>
+<span data-linenumber="130"></span>
+<span data-linenumber="131"></span>
+<span data-linenumber="132"></span>
+<span data-linenumber="133"></span>
+<span data-linenumber="134"></span>
+<span data-linenumber="135"></span>
+<span data-linenumber="136"></span>
+<span data-linenumber="137"></span>
+<span data-linenumber="138"></span>
+<span data-linenumber="139"></span>
+<span data-linenumber="140"></span>
+<span data-linenumber="141"></span>
+<span data-linenumber="142"></span>
+<span data-linenumber="143"></span>
+<span data-linenumber="144"></span>
+<span data-linenumber="145"></span>
+<span data-linenumber="146"></span>
+<span data-linenumber="147"></span>
+<span data-linenumber="148"></span>
+<span data-linenumber="149"></span>
+<span data-linenumber="150"></span>
+<span data-linenumber="151"></span>
+<span data-linenumber="152"></span>
+<span data-linenumber="153"></span>
+<span data-linenumber="154"></span>
+<span data-linenumber="155"></span>
+<span data-linenumber="156"></span>
+<span data-linenumber="157"></span>
+<span data-linenumber="158"></span>
+<span data-linenumber="159"></span>
+<span data-linenumber="160"></span>
+<span data-linenumber="161"></span>
+<span data-linenumber="162"></span>
+<span data-linenumber="163"></span>
+<span data-linenumber="164"></span>
+<span data-linenumber="165"></span>
+<span data-linenumber="166"></span>
+<span data-linenumber="167"></span>
+<span data-linenumber="168"></span>
+<span data-linenumber="169"></span>
+<span data-linenumber="170"></span>
+<span data-linenumber="171"></span>
+<span data-linenumber="172"></span>
+<span data-linenumber="173"></span>
+<span data-linenumber="174"></span>
+<span data-linenumber="175"></span>
+<span data-linenumber="176"></span>
+<span data-linenumber="177"></span>
+<span data-linenumber="178"></span>
+<span data-linenumber="179"></span>
+<span data-linenumber="180"></span>
+<span data-linenumber="181"></span>
+<span data-linenumber="182"></span>
+<span data-linenumber="183"></span>
+<span data-linenumber="184"></span>
+<span data-linenumber="185"></span>
+<span data-linenumber="186"></span>
+<span data-linenumber="187"></span>
+<span data-linenumber="188"></span>
+<span data-linenumber="189"></span>
+<span data-linenumber="190"></span>
+<span data-linenumber="191"></span>
+<span data-linenumber="192"></span>
+<span data-linenumber="193"></span>
+<span data-linenumber="194"></span>
+<span data-linenumber="195"></span>
+<span data-linenumber="196"></span>
+<span data-linenumber="197"></span>
+<span data-linenumber="198"></span>
+<span data-linenumber="199"></span>
+<span data-linenumber="200"></span>
+<span data-linenumber="201"></span>
+<span data-linenumber="202"></span>
+<span data-linenumber="203"></span>
+<span data-linenumber="204"></span>
+<span data-linenumber="205"></span>
+<span data-linenumber="206"></span>
+<span data-linenumber="207"></span>
+<span data-linenumber="208"></span>
+<span data-linenumber="209"></span>
+<span data-linenumber="210"></span>
+<span data-linenumber="211"></span>
+<span data-linenumber="212"></span>
+<span data-linenumber="213"></span>
+<span data-linenumber="214"></span>
+<span data-linenumber="215"></span>
+<span data-linenumber="216"></span>
+<span data-linenumber="217"></span>
+<span data-linenumber="218"></span>
+<span data-linenumber="219"></span>
+<span data-linenumber="220"></span>
+<span data-linenumber="221"></span>
+<span data-linenumber="222"></span>
+<span data-linenumber="223"></span>
+<span data-linenumber="224"></span>
+<span data-linenumber="225"></span>
+<span data-linenumber="226"></span>
+<span data-linenumber="227"></span>
+<span data-linenumber="228"></span>
+<span data-linenumber="229"></span>
+<span data-linenumber="230"></span>
+<span data-linenumber="231"></span>
+<span data-linenumber="232"></span>
+<span data-linenumber="233"></span>
+<span data-linenumber="234"></span>
+<span data-linenumber="235"></span>
+<span data-linenumber="236"></span>
+<span data-linenumber="237"></span>
+<span data-linenumber="238"></span>
+<span data-linenumber="239"></span>
+<span data-linenumber="240"></span>
+<span data-linenumber="241"></span>
+<span data-linenumber="242"></span>
+<span data-linenumber="243"></span>
+<span data-linenumber="244"></span>
+<span data-linenumber="245"></span>
+<span data-linenumber="246"></span>
+<span data-linenumber="247"></span>
+<span data-linenumber="248"></span>
+<span data-linenumber="249"></span>
+<span data-linenumber="250"></span>
+<span data-linenumber="251"></span></div><div class="code"><span class="token punctuation">{</span>
+   <span class="token property">"1"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:28"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:53"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:45"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:55"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:28"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:42"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"2"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:26"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:52"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:44"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:56"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:29"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:43"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"3"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:25"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:51"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:44"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:56"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:29"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:44"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"4"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:24"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:49"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:44"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:57"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:30"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:45"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"5"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:23"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:48"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:44"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:57"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:31"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:45"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"6"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:21"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:47"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:44"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:57"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:32"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:46"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"7"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:20"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:45"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:43"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:58"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:33"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:47"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"8"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:19"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:44"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:43"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:58"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:34"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:48"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"9"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:17"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:43"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:43"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:59"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:34"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:49"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"10"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:16"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:41"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:43"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:59"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:35"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:50"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"11"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:15"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:40"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:42"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"16:59"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:36"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:50"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"12"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:13"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:39"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:42"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:00"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:37"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:51"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"13"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:12"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:38"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:42"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:00"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:38"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:52"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"14"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:11"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:36"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:42"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:00"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:38"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:53"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"15"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:09"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:35"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:41"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:01"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:39"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:54"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"16"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:08"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:33"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:41"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:01"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:40"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:54"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"17"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:06"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:32"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:41"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:01"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:41"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:55"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"18"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:05"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:31"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:40"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:02"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:41"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:56"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"19"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:04"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:29"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:40"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:02"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:42"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:57"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"20"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:02"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:28"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:40"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:02"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:43"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:58"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"21"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"06:01"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:27"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:39"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:02"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:44"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"20:59"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"22"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:59"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:25"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:39"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:03"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:45"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:00"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"23"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:58"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:24"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:39"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:03"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:45"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:00"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"24"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:56"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:23"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:39"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:03"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:46"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:01"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"25"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:55"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:21"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:38"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:03"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:47"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:02"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"26"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:53"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:20"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:38"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:04"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:48"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:03"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"27"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:52"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:19"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:38"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:04"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:48"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:04"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"28"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:50"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:17"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:37"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:04"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:49"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:05"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"29"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:49"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:16"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:37"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:04"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:50"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:06"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"30"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:47"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:14"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:37"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:04"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:51"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:07"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"31"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:46"</span><span class="token punctuation">,</span>
+      <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:13"</span><span class="token punctuation">,</span>
+      <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:36"</span><span class="token punctuation">,</span>
+      <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:05"</span><span class="token punctuation">,</span>
+      <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:51"</span><span class="token punctuation">,</span>
+      <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:07"</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</div></div></code></pre><h3 id="For-get-prayer-times-of-Rabat-for-date-20210325" data-id="For-get-prayer-times-of-Rabat-for-date-20210325" style=""><a class="anchor hidden-xs" href="#For-get-prayer-times-of-Rabat-for-date-20210325" title="For-get-prayer-times-of-Rabat-for-date-20210325"><span class="octicon octicon-link"></span></a>For get prayer times of Rabat for  date 2021/03/25</h3><p><img class="emoji" alt=":information_source:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/information_source.png"> <strong>ID number of Rabat city is 69</strong></p><ul>
+<li>Go to <a href="https://www.prayertimes.mahmoud.ma/api/69/2021/03/25" target="_blank" rel="noopener">https://www.prayertimes.mahmoud.ma/api/69/2021/03/25</a></li>
+</ul><p>return</p><pre><code class="json hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span></div><div class="code"><span class="token punctuation">{</span>
+   <span class="token property">"fajr"</span><span class="token operator">:</span><span class="token string">"05:55"</span><span class="token punctuation">,</span>
+   <span class="token property">"sunrise"</span><span class="token operator">:</span><span class="token string">"07:21"</span><span class="token punctuation">,</span>
+   <span class="token property">"dohr"</span><span class="token operator">:</span><span class="token string">"13:38"</span><span class="token punctuation">,</span>
+   <span class="token property">"asr"</span><span class="token operator">:</span><span class="token string">"17:03"</span><span class="token punctuation">,</span>
+   <span class="token property">"maghreb"</span><span class="token operator">:</span><span class="token string">"19:47"</span><span class="token punctuation">,</span>
+   <span class="token property">"ichaa"</span><span class="token operator">:</span><span class="token string">"21:02"</span>
+<span class="token punctuation">}</span>
+</div></div></code></pre><h3 id="For-get-list-of-cities" data-id="For-get-list-of-cities" style=""><a class="anchor hidden-xs" href="#For-get-list-of-cities" title="For-get-list-of-cities"><span class="octicon octicon-link"></span></a>For get list of cities</h3><ul>
+<li>Go to <a href="https://www.prayertimes.mahmoud.ma/api/cities" target="_blank" rel="noopener">https://www.prayertimes.mahmoud.ma/api/cities</a></li>
+</ul><p>return</p><pre><code class="json hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span>
+<span data-linenumber="36"></span>
+<span data-linenumber="37"></span>
+<span data-linenumber="38"></span>
+<span data-linenumber="39"></span>
+<span data-linenumber="40"></span>
+<span data-linenumber="41"></span>
+<span data-linenumber="42"></span>
+<span data-linenumber="43"></span>
+<span data-linenumber="44"></span>
+<span data-linenumber="45"></span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span>
+<span data-linenumber="50"></span>
+<span data-linenumber="51"></span>
+<span data-linenumber="52"></span>
+<span data-linenumber="53"></span>
+<span data-linenumber="54"></span>
+<span data-linenumber="55"></span>
+<span data-linenumber="56"></span>
+<span data-linenumber="57"></span>
+<span data-linenumber="58"></span>
+<span data-linenumber="59"></span>
+<span data-linenumber="60"></span>
+<span data-linenumber="61"></span>
+<span data-linenumber="62"></span>
+<span data-linenumber="63"></span>
+<span data-linenumber="64"></span>
+<span data-linenumber="65"></span>
+<span data-linenumber="66"></span>
+<span data-linenumber="67"></span>
+<span data-linenumber="68"></span>
+<span data-linenumber="69"></span>
+<span data-linenumber="70"></span>
+<span data-linenumber="71"></span>
+<span data-linenumber="72"></span>
+<span data-linenumber="73"></span>
+<span data-linenumber="74"></span>
+<span data-linenumber="75"></span>
+<span data-linenumber="76"></span>
+<span data-linenumber="77"></span>
+<span data-linenumber="78"></span>
+<span data-linenumber="79"></span>
+<span data-linenumber="80"></span>
+<span data-linenumber="81"></span>
+<span data-linenumber="82"></span>
+<span data-linenumber="83"></span>
+<span data-linenumber="84"></span>
+<span data-linenumber="85"></span>
+<span data-linenumber="86"></span>
+<span data-linenumber="87"></span>
+<span data-linenumber="88"></span>
+<span data-linenumber="89"></span>
+<span data-linenumber="90"></span>
+<span data-linenumber="91"></span>
+<span data-linenumber="92"></span>
+<span data-linenumber="93"></span>
+<span data-linenumber="94"></span>
+<span data-linenumber="95"></span>
+<span data-linenumber="96"></span>
+<span data-linenumber="97"></span>
+<span data-linenumber="98"></span>
+<span data-linenumber="99"></span>
+<span data-linenumber="100"></span>
+<span data-linenumber="101"></span>
+<span data-linenumber="102"></span>
+<span data-linenumber="103"></span>
+<span data-linenumber="104"></span>
+<span data-linenumber="105"></span>
+<span data-linenumber="106"></span>
+<span data-linenumber="107"></span>
+<span data-linenumber="108"></span>
+<span data-linenumber="109"></span>
+<span data-linenumber="110"></span>
+<span data-linenumber="111"></span>
+<span data-linenumber="112"></span>
+<span data-linenumber="113"></span>
+<span data-linenumber="114"></span>
+<span data-linenumber="115"></span>
+<span data-linenumber="116"></span>
+<span data-linenumber="117"></span>
+<span data-linenumber="118"></span>
+<span data-linenumber="119"></span>
+<span data-linenumber="120"></span>
+<span data-linenumber="121"></span>
+<span data-linenumber="122"></span>
+<span data-linenumber="123"></span>
+<span data-linenumber="124"></span>
+<span data-linenumber="125"></span>
+<span data-linenumber="126"></span>
+<span data-linenumber="127"></span>
+<span data-linenumber="128"></span>
+<span data-linenumber="129"></span>
+<span data-linenumber="130"></span>
+<span data-linenumber="131"></span>
+<span data-linenumber="132"></span>
+<span data-linenumber="133"></span>
+<span data-linenumber="134"></span>
+<span data-linenumber="135"></span>
+<span data-linenumber="136"></span>
+<span data-linenumber="137"></span>
+<span data-linenumber="138"></span>
+<span data-linenumber="139"></span>
+<span data-linenumber="140"></span>
+<span data-linenumber="141"></span>
+<span data-linenumber="142"></span>
+<span data-linenumber="143"></span>
+<span data-linenumber="144"></span>
+<span data-linenumber="145"></span>
+<span data-linenumber="146"></span>
+<span data-linenumber="147"></span>
+<span data-linenumber="148"></span>
+<span data-linenumber="149"></span>
+<span data-linenumber="150"></span>
+<span data-linenumber="151"></span>
+<span data-linenumber="152"></span>
+<span data-linenumber="153"></span>
+<span data-linenumber="154"></span>
+<span data-linenumber="155"></span>
+<span data-linenumber="156"></span>
+<span data-linenumber="157"></span>
+<span data-linenumber="158"></span>
+<span data-linenumber="159"></span>
+<span data-linenumber="160"></span>
+<span data-linenumber="161"></span>
+<span data-linenumber="162"></span>
+<span data-linenumber="163"></span>
+<span data-linenumber="164"></span>
+<span data-linenumber="165"></span>
+<span data-linenumber="166"></span>
+<span data-linenumber="167"></span>
+<span data-linenumber="168"></span>
+<span data-linenumber="169"></span>
+<span data-linenumber="170"></span>
+<span data-linenumber="171"></span>
+<span data-linenumber="172"></span>
+<span data-linenumber="173"></span>
+<span data-linenumber="174"></span>
+<span data-linenumber="175"></span>
+<span data-linenumber="176"></span>
+<span data-linenumber="177"></span>
+<span data-linenumber="178"></span>
+<span data-linenumber="179"></span>
+<span data-linenumber="180"></span>
+<span data-linenumber="181"></span>
+<span data-linenumber="182"></span>
+<span data-linenumber="183"></span>
+<span data-linenumber="184"></span>
+<span data-linenumber="185"></span>
+<span data-linenumber="186"></span>
+<span data-linenumber="187"></span>
+<span data-linenumber="188"></span>
+<span data-linenumber="189"></span>
+<span data-linenumber="190"></span>
+<span data-linenumber="191"></span>
+<span data-linenumber="192"></span>
+<span data-linenumber="193"></span>
+<span data-linenumber="194"></span>
+<span data-linenumber="195"></span>
+<span data-linenumber="196"></span>
+<span data-linenumber="197"></span>
+<span data-linenumber="198"></span>
+<span data-linenumber="199"></span>
+<span data-linenumber="200"></span>
+<span data-linenumber="201"></span>
+<span data-linenumber="202"></span>
+<span data-linenumber="203"></span>
+<span data-linenumber="204"></span>
+<span data-linenumber="205"></span>
+<span data-linenumber="206"></span>
+<span data-linenumber="207"></span>
+<span data-linenumber="208"></span>
+<span data-linenumber="209"></span>
+<span data-linenumber="210"></span>
+<span data-linenumber="211"></span>
+<span data-linenumber="212"></span>
+<span data-linenumber="213"></span>
+<span data-linenumber="214"></span>
+<span data-linenumber="215"></span>
+<span data-linenumber="216"></span>
+<span data-linenumber="217"></span>
+<span data-linenumber="218"></span>
+<span data-linenumber="219"></span>
+<span data-linenumber="220"></span>
+<span data-linenumber="221"></span>
+<span data-linenumber="222"></span>
+<span data-linenumber="223"></span>
+<span data-linenumber="224"></span>
+<span data-linenumber="225"></span>
+<span data-linenumber="226"></span>
+<span data-linenumber="227"></span>
+<span data-linenumber="228"></span>
+<span data-linenumber="229"></span>
+<span data-linenumber="230"></span>
+<span data-linenumber="231"></span>
+<span data-linenumber="232"></span>
+<span data-linenumber="233"></span>
+<span data-linenumber="234"></span>
+<span data-linenumber="235"></span>
+<span data-linenumber="236"></span>
+<span data-linenumber="237"></span>
+<span data-linenumber="238"></span>
+<span data-linenumber="239"></span>
+<span data-linenumber="240"></span>
+<span data-linenumber="241"></span>
+<span data-linenumber="242"></span>
+<span data-linenumber="243"></span>
+<span data-linenumber="244"></span>
+<span data-linenumber="245"></span>
+<span data-linenumber="246"></span>
+<span data-linenumber="247"></span>
+<span data-linenumber="248"></span>
+<span data-linenumber="249"></span>
+<span data-linenumber="250"></span>
+<span data-linenumber="251"></span>
+<span data-linenumber="252"></span>
+<span data-linenumber="253"></span>
+<span data-linenumber="254"></span>
+<span data-linenumber="255"></span>
+<span data-linenumber="256"></span>
+<span data-linenumber="257"></span>
+<span data-linenumber="258"></span>
+<span data-linenumber="259"></span>
+<span data-linenumber="260"></span>
+<span data-linenumber="261"></span>
+<span data-linenumber="262"></span>
+<span data-linenumber="263"></span>
+<span data-linenumber="264"></span>
+<span data-linenumber="265"></span>
+<span data-linenumber="266"></span>
+<span data-linenumber="267"></span>
+<span data-linenumber="268"></span>
+<span data-linenumber="269"></span>
+<span data-linenumber="270"></span>
+<span data-linenumber="271"></span>
+<span data-linenumber="272"></span>
+<span data-linenumber="273"></span>
+<span data-linenumber="274"></span>
+<span data-linenumber="275"></span>
+<span data-linenumber="276"></span>
+<span data-linenumber="277"></span>
+<span data-linenumber="278"></span>
+<span data-linenumber="279"></span>
+<span data-linenumber="280"></span>
+<span data-linenumber="281"></span>
+<span data-linenumber="282"></span>
+<span data-linenumber="283"></span>
+<span data-linenumber="284"></span>
+<span data-linenumber="285"></span>
+<span data-linenumber="286"></span>
+<span data-linenumber="287"></span>
+<span data-linenumber="288"></span>
+<span data-linenumber="289"></span>
+<span data-linenumber="290"></span>
+<span data-linenumber="291"></span>
+<span data-linenumber="292"></span>
+<span data-linenumber="293"></span>
+<span data-linenumber="294"></span>
+<span data-linenumber="295"></span>
+<span data-linenumber="296"></span>
+<span data-linenumber="297"></span>
+<span data-linenumber="298"></span>
+<span data-linenumber="299"></span>
+<span data-linenumber="300"></span>
+<span data-linenumber="301"></span>
+<span data-linenumber="302"></span>
+<span data-linenumber="303"></span>
+<span data-linenumber="304"></span>
+<span data-linenumber="305"></span>
+<span data-linenumber="306"></span>
+<span data-linenumber="307"></span>
+<span data-linenumber="308"></span>
+<span data-linenumber="309"></span>
+<span data-linenumber="310"></span>
+<span data-linenumber="311"></span>
+<span data-linenumber="312"></span>
+<span data-linenumber="313"></span>
+<span data-linenumber="314"></span>
+<span data-linenumber="315"></span>
+<span data-linenumber="316"></span>
+<span data-linenumber="317"></span>
+<span data-linenumber="318"></span>
+<span data-linenumber="319"></span>
+<span data-linenumber="320"></span>
+<span data-linenumber="321"></span>
+<span data-linenumber="322"></span>
+<span data-linenumber="323"></span>
+<span data-linenumber="324"></span>
+<span data-linenumber="325"></span>
+<span data-linenumber="326"></span>
+<span data-linenumber="327"></span>
+<span data-linenumber="328"></span>
+<span data-linenumber="329"></span>
+<span data-linenumber="330"></span>
+<span data-linenumber="331"></span>
+<span data-linenumber="332"></span>
+<span data-linenumber="333"></span>
+<span data-linenumber="334"></span>
+<span data-linenumber="335"></span>
+<span data-linenumber="336"></span>
+<span data-linenumber="337"></span>
+<span data-linenumber="338"></span>
+<span data-linenumber="339"></span>
+<span data-linenumber="340"></span>
+<span data-linenumber="341"></span>
+<span data-linenumber="342"></span>
+<span data-linenumber="343"></span>
+<span data-linenumber="344"></span>
+<span data-linenumber="345"></span>
+<span data-linenumber="346"></span>
+<span data-linenumber="347"></span>
+<span data-linenumber="348"></span>
+<span data-linenumber="349"></span>
+<span data-linenumber="350"></span>
+<span data-linenumber="351"></span>
+<span data-linenumber="352"></span>
+<span data-linenumber="353"></span>
+<span data-linenumber="354"></span>
+<span data-linenumber="355"></span>
+<span data-linenumber="356"></span>
+<span data-linenumber="357"></span>
+<span data-linenumber="358"></span>
+<span data-linenumber="359"></span>
+<span data-linenumber="360"></span>
+<span data-linenumber="361"></span>
+<span data-linenumber="362"></span>
+<span data-linenumber="363"></span>
+<span data-linenumber="364"></span>
+<span data-linenumber="365"></span>
+<span data-linenumber="366"></span>
+<span data-linenumber="367"></span>
+<span data-linenumber="368"></span>
+<span data-linenumber="369"></span>
+<span data-linenumber="370"></span>
+<span data-linenumber="371"></span>
+<span data-linenumber="372"></span>
+<span data-linenumber="373"></span>
+<span data-linenumber="374"></span>
+<span data-linenumber="375"></span>
+<span data-linenumber="376"></span>
+<span data-linenumber="377"></span>
+<span data-linenumber="378"></span>
+<span data-linenumber="379"></span>
+<span data-linenumber="380"></span>
+<span data-linenumber="381"></span>
+<span data-linenumber="382"></span>
+<span data-linenumber="383"></span>
+<span data-linenumber="384"></span>
+<span data-linenumber="385"></span>
+<span data-linenumber="386"></span>
+<span data-linenumber="387"></span>
+<span data-linenumber="388"></span>
+<span data-linenumber="389"></span>
+<span data-linenumber="390"></span>
+<span data-linenumber="391"></span>
+<span data-linenumber="392"></span>
+<span data-linenumber="393"></span>
+<span data-linenumber="394"></span>
+<span data-linenumber="395"></span>
+<span data-linenumber="396"></span>
+<span data-linenumber="397"></span>
+<span data-linenumber="398"></span>
+<span data-linenumber="399"></span>
+<span data-linenumber="400"></span>
+<span data-linenumber="401"></span>
+<span data-linenumber="402"></span>
+<span data-linenumber="403"></span>
+<span data-linenumber="404"></span>
+<span data-linenumber="405"></span>
+<span data-linenumber="406"></span>
+<span data-linenumber="407"></span>
+<span data-linenumber="408"></span>
+<span data-linenumber="409"></span>
+<span data-linenumber="410"></span>
+<span data-linenumber="411"></span>
+<span data-linenumber="412"></span>
+<span data-linenumber="413"></span>
+<span data-linenumber="414"></span>
+<span data-linenumber="415"></span>
+<span data-linenumber="416"></span>
+<span data-linenumber="417"></span>
+<span data-linenumber="418"></span>
+<span data-linenumber="419"></span>
+<span data-linenumber="420"></span>
+<span data-linenumber="421"></span>
+<span data-linenumber="422"></span>
+<span data-linenumber="423"></span>
+<span data-linenumber="424"></span>
+<span data-linenumber="425"></span>
+<span data-linenumber="426"></span>
+<span data-linenumber="427"></span>
+<span data-linenumber="428"></span>
+<span data-linenumber="429"></span>
+<span data-linenumber="430"></span>
+<span data-linenumber="431"></span>
+<span data-linenumber="432"></span>
+<span data-linenumber="433"></span>
+<span data-linenumber="434"></span>
+<span data-linenumber="435"></span>
+<span data-linenumber="436"></span>
+<span data-linenumber="437"></span>
+<span data-linenumber="438"></span>
+<span data-linenumber="439"></span>
+<span data-linenumber="440"></span>
+<span data-linenumber="441"></span>
+<span data-linenumber="442"></span>
+<span data-linenumber="443"></span>
+<span data-linenumber="444"></span>
+<span data-linenumber="445"></span>
+<span data-linenumber="446"></span>
+<span data-linenumber="447"></span>
+<span data-linenumber="448"></span>
+<span data-linenumber="449"></span>
+<span data-linenumber="450"></span>
+<span data-linenumber="451"></span>
+<span data-linenumber="452"></span>
+<span data-linenumber="453"></span>
+<span data-linenumber="454"></span>
+<span data-linenumber="455"></span>
+<span data-linenumber="456"></span>
+<span data-linenumber="457"></span>
+<span data-linenumber="458"></span>
+<span data-linenumber="459"></span>
+<span data-linenumber="460"></span>
+<span data-linenumber="461"></span>
+<span data-linenumber="462"></span>
+<span data-linenumber="463"></span></div><div class="code">
+<span class="token punctuation">{</span>
+   <span class="token property">"1"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Figuig"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"فكيك"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"2"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Oujda"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"وجدة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"3"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Bouarfa"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بوعرفة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"4"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Jerada"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"جرادة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"5"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Berkane"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بركان"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"6"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Aïn Chaïr"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"عين الشعير"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"7"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Taourirt"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تاوريرت"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"8"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Nador"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الناظور"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"9"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Melilla"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"مليلية"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"10"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Bouanane"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بوعنان"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"11"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Guercif"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"كرسيف"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"12"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Boutagit"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بوتاجيت"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"13"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tandit"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تانديت"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"14"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Aknol"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أكنول"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"15"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Al Hoceima"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الحسيمة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"16"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Missour"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"ميسور"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"17"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Taza"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تازة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"18"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Bourd"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بورد"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"19"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Erfoud"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أرفود"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"20"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Rissani"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الريصاني"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"21"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Oued Amlil"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"واد إمليل"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"22"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tahla"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تاهلة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"23"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Erachidia"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الراشيدية"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"24"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Er-Rich"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الريش"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"25"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"El Menzel Beni Yazgha"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"المنزل بني يازغة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"26"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Taounate"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تاونات"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"27"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tissa"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تيسة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"28"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Boulemane"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بولمان"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"29"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Midelt"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"ميدلت"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"30"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Sefrou"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"صفرو"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"31"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Goulmima"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"كلميمة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"32"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Fes"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"فاس"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"33"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Imouzzer kandar"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"إموزار كندر"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"34"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tinejdad"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تنجداد"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"35"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Ifrane"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"إفران"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"36"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Moulay Yacoub"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"مولاي يعقوب"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"37"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Azrou"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أزرو"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"38"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Chefchaouen"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"شفشاون"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"39"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Sebta"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"سبتة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"40"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tetouan"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تطوان"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"41"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"El Hajeb"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الحاجب"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"42"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Moulay Driss Zerhoun"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"مولاي دريس زرهون"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"43"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Meknes"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"مكناس"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"44"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Ouezzane"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"وزان"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"45"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Khenifra"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"خنيفرة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"46"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Sidi Kacem"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"سيدي قاسم"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"47"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tizi Ouasli"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تيزي وسلي"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"48"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tanger"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"طنجة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"49"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Zagora"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"زاكورة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"50"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Ksar El Kebir"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"القصر الكبير"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"51"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Arbaoua"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"عرباوة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"52"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Sidi Slimane"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"سيدي سليمان"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"53"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Souk El Arbaa Gharb"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"سوق أربعاء الغرب"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"54"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Assilah"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أصيلا "</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"55"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Khemisset"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الخميسات"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"56"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Kelaat Magouna"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"قلعة مكونة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"57"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Larache"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"العرائش"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"58"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Moulay Bouazza"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"مولاي بوعزة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"59"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Kasba Tadla"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"قصبة تادلة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"60"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Sidi Yahya El Gharb"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"سيدي يحيى الغرب"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"61"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tifelt"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تيفلت"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"62"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Beni Mellal"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بني ملال"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"63"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Meskoura"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"مسكورة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"64"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Oued Zem"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"واد زم"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"65"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Azilal"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أزيلال"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"66"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Fquih Ben Salah"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"فقيه بن صالح"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"67"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Kenitra"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"قنيطرة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"68"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Rommani"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الرماني"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"69"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Rabat-Salé"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الرباط سلا"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"70"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Khouribga"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"خريبكة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"71"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Ouarzazate"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"ورزازات"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"72"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Demnate"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"دمنات"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"73"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Benslimane"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بن سليمان"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"74"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Bouznika"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بوزنيقة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"75"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"El Gara"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الكارة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"76"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Mohammedia"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"المحمدية"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"77"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Kelaat Sraghna"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"قلعة السراغنة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"78"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Berrchid"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"برشيد"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"79"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Settat"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"سطات"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"80"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Casablanca"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الدار البيضاء"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"81"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Taliouine"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تاليوين"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"82"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Benguerir"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بنكرير"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"83"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tata"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"طاطا"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"84"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Marrakech"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"مراكش"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"85"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Akka"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أقا"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"86"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Azemmour"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أزمور"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"87"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Aghram"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أغرام"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"88"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"El Jadida"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الجديدة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"89"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Youssoufia"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"اليوسفية"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"90"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Taroudant"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تارودانت"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"91"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tafraout"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تافراوت"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"92"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Safi"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أسفي"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"93"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Zag"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الزاك"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"94"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Assa"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أسا"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"95"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Agadir"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أكادير"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"96"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tiznit"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تيزنيت"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"97"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Essaouira"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الصويرة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"98"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Guelmim"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"كلميم"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"99"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Sidi Ifni"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"سيدي إفني"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"100"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tan-Tan"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"طانطان"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"101"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Smara"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"سمارة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"102"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tarfaya"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"طرفاية"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"103"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Laayoun"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"العيون"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"104"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Boujdour"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"بوجدور"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"105"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Dakhla"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الداخلة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"106"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Lagouira"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الكويرة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"107"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Alnif"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"النيف"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"108"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Bejaad"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أبي جعد"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"109"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Aousserd"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أوسرد"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"110"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Tinghir"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"تنغير"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"111"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Chtouka Ait Baha"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"أشتوكة أيت باها"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"112"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Fnideq"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الفنيدق"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"113"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Skhour Rehamna"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"صخور الرحامنة"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"114"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Sidi Ifni"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"سيدي إفني"</span>
+   <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   <span class="token property">"115"</span><span class="token operator">:</span><span class="token punctuation">{</span>
+      <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Ouezzane"</span><span class="token punctuation">,</span>
+      <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"وزان"</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</div></div></code></pre><h3 id="For-get-name-of-Rabat" data-id="For-get-name-of-Rabat" style=""><a class="anchor hidden-xs" href="#For-get-name-of-Rabat" title="For-get-name-of-Rabat"><span class="octicon octicon-link"></span></a>For get name of Rabat</h3><p><img class="emoji" alt=":information_source:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/information_source.png"> <strong>ID number of Rabat city is 69</strong></p><ul>
+<li>Go to <a href="https://www.prayertimes.mahmoud.ma/api/cities/69" target="_blank" rel="noopener">https://www.prayertimes.mahmoud.ma/api/cities/69</a></li>
+</ul><p>return</p><pre><code class="json hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span></div><div class="code"><span class="token punctuation">{</span>
+   <span class="token property">"nameFR"</span><span class="token operator">:</span><span class="token string">"Rabat-Salé"</span><span class="token punctuation">,</span>
+   <span class="token property">"nameAR"</span><span class="token operator">:</span><span class="token string">"الرباط سلا"</span>
+<span class="token punctuation">}</span>
+</div></div></code></pre><hr><h2 id="Created-by" data-id="Created-by" style=""><a class="anchor hidden-xs" href="#Created-by" title="Created-by"><span class="octicon octicon-link"></span></a>Created by</h2><ul>
+<li>🇲🇦 <strong>Mahmoud Zakaria</strong></li>
+<li>🌐 <a href="https://www.mahmoud.ma/" target="_blank" rel="noopener">www.mahmoud.ma</a></li>
+</ul></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#Morocco-Prayer-Times--API" title="Morocco Prayer Times -API">Morocco Prayer Times -API</a><ul class="nav">
+<li><a href="#Install" title="Install">Install</a></li>
+<li class=""><a href="#How-to-use-" title="How to use ?">How to use ?</a><ul class="nav">
+<li><a href="#For-get-today’s-prayer-times-for-Rabat" title="For get today’s prayer times for  Rabat">For get today’s prayer times for  Rabat</a></li>
+<li class=""><a href="#For-get-prayer-times-of-Rabat-for-the-month-3-of-the-year-2021" title="For get prayer times of Rabat for the month 3 of the year 2021">For get prayer times of Rabat for the month 3 of the year 2021</a></li>
+<li class=""><a href="#For-get-prayer-times-of-Rabat-for-date-20210325" title="For get prayer times of Rabat for  date 2021/03/25">For get prayer times of Rabat for  date 2021/03/25</a></li>
+<li class=""><a href="#For-get-list-of-cities" title="For get list of cities">For get list of cities</a></li>
+<li><a href="#For-get-name-of-Rabat" title="For get name of Rabat">For get name of Rabat</a></li>
+</ul>
+</li>
+<li><a href="#Created-by" title="Created by">Created by</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#Morocco-Prayer-Times--API" title="Morocco Prayer Times -API">Morocco Prayer Times -API</a><ul class="nav">
+<li><a href="#Install" title="Install">Install</a></li>
+<li class=""><a href="#How-to-use-" title="How to use ?">How to use ?</a><ul class="nav">
+<li><a href="#For-get-today’s-prayer-times-for-Rabat" title="For get today’s prayer times for  Rabat">For get today’s prayer times for  Rabat</a></li>
+<li class=""><a href="#For-get-prayer-times-of-Rabat-for-the-month-3-of-the-year-2021" title="For get prayer times of Rabat for the month 3 of the year 2021">For get prayer times of Rabat for the month 3 of the year 2021</a></li>
+<li class=""><a href="#For-get-prayer-times-of-Rabat-for-date-20210325" title="For get prayer times of Rabat for  date 2021/03/25">For get prayer times of Rabat for  date 2021/03/25</a></li>
+<li class=""><a href="#For-get-list-of-cities" title="For get list of cities">For get list of cities</a></li>
+<li><a href="#For-get-name-of-Rabat" title="For get name of Rabat">For get name of Rabat</a></li>
+</ul>
+</li>
+<li><a href="#Created-by" title="Created by">Created by</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
