@@ -140,7 +140,7 @@ node app.js
 
 **Or with other timezones ([list of timezones](https://github.com/dmfilipenko/timezones.json/blob/master/timezones.json))**
 
-- http://localhost:3000/api/69/today?timezone=Pacific/Auckland
+- https://www.prayertimes.mahmoud.ma/api/69/today?timezone=Pacific/Auckland
 
 
 return : 
