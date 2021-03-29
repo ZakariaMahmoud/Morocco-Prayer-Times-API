@@ -43,11 +43,12 @@ app.get('/api/cities/:id?', (req, res) => {
 
 
 app.get('/api/', (req, res) => {
-    res.redirect('https://github.com/ZakariaMahmoud/Morocco-Prayer-Times-API')
+    
+    res.sendFile(__dirname +"/index.html");
 })
 
 app.get('*', (req, res) => {
-    res.send("")
+    res.send("Coming Soon")
 })
 
 
