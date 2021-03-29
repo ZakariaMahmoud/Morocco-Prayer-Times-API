@@ -1,10 +1,17 @@
 # Morocco Prayer Times -API
 
-Morocco Prayer Times API ( From the Ministry of Endowments and Islamic Affairs in Morocco habous.gov.ma)
+🇲🇦 **Morocco Prayer Times API ( From the Ministry of Endowments and Islamic Affairs in Morocco habous.gov.ma)** 🇲🇦
+## Install
+
+```bash=
+npm install
+
+node app.js
+```
 
 ## How to use ? 
 
-- Every city has an ID number 
+- **Every city has an ID number** 
 
 
 
